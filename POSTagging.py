@@ -2,19 +2,19 @@ import re
 from collections import Counter
 
 # unique words and their count
-word = re.findall('\S+_', open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read())
+word = re.findall('\S+_', open('corpus.txt').read())
 word = [a.lower() for a in word]
 unique_words = Counter(word)
 count_word = len(word)
 word_dic = {word: float("{0:4f}".format(float(unique_words[word]) / count_word)) for word in unique_words}
 
 # unique word-tag count (Case Sensitive)
-wordtag = open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read()
+wordtag = open('corpus.txt').read()
 wordtag = wordtag.lower()
 unique = Counter(wordtag.split())
 
 # Count of unique tags
-tag = re.findall('_\S+', open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read())
+tag = re.findall('_\S+', open('corpus.txt').read())
 tag = [a.lower() for a in tag]
 unique_tags = Counter(tag)
 count_tag = len(tag)
@@ -57,7 +57,7 @@ for word in unique_words:
 wo = ""
 corpus2 = open("corpus2.txt",'w')
 prob_list = list(prob_max.keys())
-wordtag = open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read()
+wordtag = open('corpus').read()
 wordtag = wordtag.lower()
 wordlist = wordtag.split()
 for n,b in enumerate(wordlist):
@@ -82,7 +82,7 @@ for n,a in enumerate(wordlist):
 new_corpus = " ".join(wordlist)
 corpus2.write(new_corpus)
 
-corpus1 = open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read()
+corpus1 = open('corpus.txt').read()
 corpus1 = corpus1.lower()
 corpus_1 = corpus1.split()
 unique = Counter(corpus1.split())
@@ -90,7 +90,7 @@ unique = Counter(corpus1.split())
 corpus2 = open('corpus2.txt').read()
 corpus_2 = corpus2.split()
 
-word = re.findall('\S+_', open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read())
+word = re.findall('\S+_', open('corpus.txt').read())
 word = [a.lower() for a in word]
 unique_words = Counter(word)
 words = list(unique_words.keys())
@@ -161,7 +161,7 @@ corpus3 = open("corpus3.txt",'w')
 new_corpus = " ".join(corpus_1)
 corpus3.write(new_corpus)
 
-corpus1 = open('HW2_F16_NLP6320_POSTaggedTrainingSet-Windows.txt').read()
+corpus1 = open('corpus.txt').read()
 corpus1 = corpus1.lower()
 corpus_1 = corpus1.split()
 unique = Counter(corpus1.split())
